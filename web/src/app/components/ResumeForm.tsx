@@ -24,16 +24,18 @@ export default function ResumeForm({ onSubmit }: any){
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <input name="name" placeholder="Nome" onChange={handleChange} />
-            <input name="email" placeholder="Email" onChange={handleChange} />
+        <form onSubmit={handleSubmit} className="space-y-4 max-w-xl">
+            <input className="w-full border p-2 rounded" name="name" placeholder="Nome" onChange={handleChange} />
+            <input className="w-full border p-2 rounded" name="email" placeholder="Email" onChange={handleChange} />
 
-            <textarea name="summary" placeholder="Resumo" onChange={handleChange}></textarea>
-            <textarea name="experience" placeholder="Experiência" onChange={handleChange}></textarea>
-            <textarea name="education" placeholder="Educação" onChange={handleChange}></textarea>
-            <textarea name="skills" placeholder="Skills" onChange={handleChange}></textarea>
+            <textarea className="w-full border p-2 rounded" name="summary" placeholder="Resumo" onChange={handleChange}></textarea>
+            <textarea className="w-full border p-2 rounded" name="experience" placeholder="Experiência" onChange={handleChange}></textarea>
+            <textarea className="w-full border p-2 rounded" name="education" placeholder="Educação" onChange={handleChange}></textarea>
+            <textarea className="w-full border p-2 rounded" name="skills" placeholder="Skills" onChange={handleChange}></textarea>
 
-            <button type="submit">Gerar Currículo</button>
+            <button className="bg-black text-white px-4 py-2 rounded cursor-pointer" type="submit">
+                Gerar Currículo
+            </button>
         </form>
     )
 }

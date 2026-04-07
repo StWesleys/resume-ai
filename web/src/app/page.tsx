@@ -18,6 +18,10 @@ export default function Home() {
                 body: JSON.stringify(data),
             });
 
+            if(!response.ok){
+                throw new Error('Erro ao processar currículo');
+            }
+
             const json = await response.json();
             setResult(json);
         } catch (error) {
@@ -33,9 +37,13 @@ export default function Home() {
 
             <ResumeForm onSubmit={handleSubmit} />
             
-            { loading && <p>Gerando...</p>}
+            { loading && (
+                <div className="mt-4 animate-pulse text-gray-500">
+                    IA está melhorando seu currículo...
+                </div>
+            )}
         
-            {result && <ResumeResult data={result} />}
+            { result && <ResumeResult data={result} />}
         </main>
     )
 }
