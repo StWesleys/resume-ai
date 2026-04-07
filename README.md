@@ -4,8 +4,8 @@ O **Resume AI** é uma aplicação fullstack desenvolvida para ajudar profission
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Frontend:** Next.js 15 (App Router), Tailwind CSS, TypeScript.
-- **Backend:** NestJS (Node.js framework).
+- **Frontend Web:** Next.js 15 (App Router), Tailwind CSS, TypeScript.
+- **Backend API:** NestJS (Node.js framework).
 - **Banco de Dados:** PostgreSQL via Supabase.
 - **ORM:** Prisma.
 - **IA:** Integração com APIs de modelos de linguagem (LLMs).
@@ -13,8 +13,8 @@ O **Resume AI** é uma aplicação fullstack desenvolvida para ajudar profission
 ## 📂 Estrutura do Projeto
 
 O projeto é organizado como um monorepo:
-- `/api`: Servidor NestJS responsável pela lógica de negócio e integração com IA.
-- `/web`: Interface web em Next.js para interação do usuário.
+- `/api`: Servidor NestJS responsável pela lógica de negócio e integração com IA (**Porta 3333**).
+- `/web`: Interface **Frontend Web** em Next.js para interação do usuário (**Porta 3000**).
 
 ## 🚀 Como Rodar o Projeto
 
@@ -23,7 +23,13 @@ O projeto é organizado como um monorepo:
 - pnpm, npm ou yarn
 - Uma conta no Supabase (PostgreSQL)
 
-### 1. Configuração do Banco (API)
-Acesse a pasta da API:
+### 1️⃣ Backend (API)
 ```bash
 cd api
+npx prisma db push
+npm run start:dev
+
+### 2️⃣ Frontend Web
+```bash
+cd web
+npm run dev
