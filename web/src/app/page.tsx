@@ -3,6 +3,7 @@
 import { useState } from "react"
 import ResumeForm from "./components/ResumeForm"
 import ResumeResult from "./components/ResumeResult"
+import ResumePreview from "./components/ResumePreview";
 
 export default function Home() {
     const [result, setResult] = useState<any>(null);
@@ -44,6 +45,8 @@ export default function Home() {
             )}
         
             { result && <ResumeResult data={result} />}
+            
+            {result && <ResumePreview data={result.formatted} />}
         </main>
     )
 }

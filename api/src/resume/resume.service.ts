@@ -35,6 +35,14 @@ export class ResumeService {
       improved: {
         summary: improvedSummary,
         experience: improvedExperience
+      },
+      formatted: {
+        name: data.name,
+        email: data.email,
+        summary: improvedSummary,
+        experience: improvedExperience,
+        education: data.education,
+        skills: data.skills.split(',').map(s => s.trim())
       }
     }
   }
